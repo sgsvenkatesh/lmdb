@@ -56,11 +56,6 @@ if (!type) {
         var resolvedPromisesCount = 0;
         moviesList.forEach(function (movie, index) {
             imdb.getReq({ name: movie }, function(err, movieInfo) {
-                // moviesInfoList.push({
-                //     name: movieInfo.name,
-                //     rating: movieInfo.rating,
-                //     genres: movieInfo.genres
-                // });
                 ++resolvedPromisesCount;
 
                 if (err || !movieInfo) {
