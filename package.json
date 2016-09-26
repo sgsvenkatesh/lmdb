@@ -1,0 +1,24 @@
+{
+  "name": "lmdb",
+  "version": "1.0.0",
+  "description": "### Local Movie Database Maintain your personal movie database with movie information from IMDb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgsvenkatesh/lmdb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgsvenkatesh/lmdb/issues"
+  },
+  "homepage": "https://github.com/sgsvenkatesh/lmdb#readme",
+  "dependencies": {
+    "imdb-api": "^2.0.0",
+    "json2csv": "^3.7.0"
+  }
+}
