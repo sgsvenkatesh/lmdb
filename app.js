@@ -53,6 +53,7 @@ if (!type) {
         }
 
         var moviesInfoList = [];
+        var resolvedPromisesCount = 0;
         moviesList.forEach(function (movie, index) {
             imdb.getReq({ name: movie }, function(err, movieInfo) {
                 // moviesInfoList.push({
@@ -60,9 +61,14 @@ if (!type) {
                 //     rating: movieInfo.rating,
                 //     genres: movieInfo.genres
                 // });
+                ++resolvedPromisesCount;
+
+                if (err || !movieInfo) {
+                    return console.log("Movie not found - " + movie);
+                }
                 moviesInfoList.push(movieInfo);
 
-                if (moviesInfoList.length === moviesList.length) {
+                if (resolvedPromisesCount === moviesList.length) {
                     json2csv({ data: moviesInfoList },
                         function (err, moviesListCsv) {
                             if (err) {
